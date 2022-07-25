@@ -1,4 +1,3 @@
-# forecast_sales
 <img src="https://user-images.githubusercontent.com/64495168/129553804-9baec55b-e3bf-407c-a5f5-8b229490bd27.png" alt="Rossmann logo" title="Rossmann" align="right" height="60" class="center"/>
 
 # Rossmann stores - 6 weeks sales forecast
@@ -19,40 +18,25 @@ Being cross-industry standard, CRISP-DM can be implemented in any Data Science p
 
 For more details about CRISP-DM metodology: https://analyticsindiamag.com/why-is-crisp-dm-gaining-grounds/
 
-![crisp_cycle](/img/crisp_cycle.png)
+
+![image](https://user-images.githubusercontent.com/73034020/180753015-7945d745-3420-4fd0-9681-6487fb066c80.png)
 
 
-##Data collection
+## Data collection
 The data was collected in Kaggle and all the columns attributes are explained below:
 
 Most of the fields are self-explanatory. The following are descriptions for those that aren't.
 
-Id - an Id that represents a (Store, Date) duple within the test set
-Store - a unique Id for each store
-Sales - the turnover for any given day (this is what you are predicting)
-Customers - the number of customers on a given day
-Open - an indicator for whether the store was open: 0 = closed, 1 = open
-StateHoliday - indicates a state holiday. Normally all stores, with few exceptions, are closed on state holidays. Note that all schools are closed on public holidays and weekends. a = public holiday, b = Easter holiday, c = Christmas, 0 = None
-SchoolHoliday - indicates if the (Store, Date) was affected by the closure of public schools
-StoreType - differentiates between 4 different store models: a, b, c, d
-Assortment - describes an assortment level: a = basic, b = extra, c = extended
-CompetitionDistance - distance in meters to the nearest competitor store
-CompetitionOpenSince[Month/Year] - gives the approximate year and month of the time the nearest competitor was opened
-Promo - indicates whether a store is running a promo on that day
-Promo2 - Promo2 is a continuing and consecutive promotion for some stores: 0 = store is not participating, 1 = store is participating
-Promo2Since[Year/Week] - describes the year and calendar week when the store started participating in Promo2
-PromoInterval - describes the consecutive intervals Promo2 is started, naming the months the promotion is started anew. E.g. "Feb,May,Aug,Nov" means each round starts in February, May, August, November of any given year for that store
+![image](https://user-images.githubusercontent.com/73034020/180752785-0bfd3ab4-4460-4122-88e0-5a1b58b63b96.png)
+
 
 For more detail about data, feel free to access the kaggle page:
 https://www.kaggle.com/competitions/rossmann-store-sales/data.
 
-##Data Understanding through mind map Hypotesis
+## Data Understanding through mind map Hypotesis
 In this section we will list some hypothesis that can be tested using this data, these hypothesis generally comes from brainstorming 
 with business areas and are very important to drive our analyses.
 If they are not enough to explain the stores sales we would search for more data and formulate new hypotheses
-
-
-![crisp_cycle](/img/Daily_Stores_Sales.png)
 
 Through the mind map, we can separe our hypothesis by factors (like Stores, Products etc...) and their attributes (Store Size, Product Price, etc...)
 
@@ -77,11 +61,13 @@ Some of them might not be tested in advance for lack of information in this Data
 Below are the summary of three tested hypoteses.
 1. Stores with larger assortments should sell more -- TRUE
 
-![image](https://user-images.githubusercontent.com/73034020/180751861-3cf01fc3-935e-432a-9b6f-a8bb632c4cf5.png)
+![image](https://user-images.githubusercontent.com/73034020/180753446-e35fd0a4-9b15-44c5-80f7-3104ccbe1079.png)
 
 ![image](https://user-images.githubusercontent.com/73034020/180751961-8b4593ec-df14-441b-afd7-b97414b57818.png)
 
 There is proportionally more sales in biggers assortments than the basic ones.
+
+1. Stores with larger assortments should sell more -- TRUE
 
 
 
