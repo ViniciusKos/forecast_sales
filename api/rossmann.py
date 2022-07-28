@@ -5,7 +5,7 @@ import numpy as np
 import math
 import datetime
 
-class rossmann( object ):
+class Rossmann( object ):
     def __init__( self ):
         self.home_path='P:\\Python\\GitHub\\forecast_sales'
         self.competition_distance_scaler   = pickle.load( open( self.home_path + '\parameters\competition_distance_scaler.pkl', 'rb') )

@@ -1,13 +1,11 @@
 import pickle
 import pandas as pd
-import inflection
 from flask             import Flask, request, Response
-import rossmann
-
-
+from rossmann import Rossmann
+import inflection
 
 # loading model
-model = pickle.load( open('P:\\Python\\GitHub\\forecast_sales\\model_xgb_rossmann_v0.pkl', 'rb') )
+model = pickle.load( open(r'P:\\Python\\GitHub\\forecast_sales\\model_xgb_rossmann_v0.pkl', 'rb') )
 
 # initialize API
 app = Flask( __name__ )
@@ -24,7 +22,7 @@ def rossmann_predict():
             test_raw = pd.DataFrame( test_json, columns=test_json[0].keys() )
             
         # Instantiate Rossmann class
-        pipeline = rossmann.rossmann()
+        pipeline = Rossmann()
         
         # data cleaning
         df1 = pipeline.data_cleaning( test_raw )
@@ -45,4 +43,4 @@ def rossmann_predict():
         return Response( '{}', status=200, mimetype='application/json' )
 
 if __name__ == '__main__':
-    app.run( '0.0.0.0' )
+    app.run( '192.168.1.10', debug=True )
