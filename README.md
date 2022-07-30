@@ -58,7 +58,7 @@ There are some hypotesis judged to be most relevant and could drive our Explorat
 
 Some of them might not be tested in advance for lack of information in this DataSet. Thus it can be tested in the next CRISP-DM circle.
 
-Below are the summary of three tested hypoteses.
+**Below are the summary of three top insights achivied through the tested hypoteses.**
 1. Stores with larger assortments should sell more -- TRUE
 
 ![image](https://user-images.githubusercontent.com/73034020/180753446-e35fd0a4-9b15-44c5-80f7-3104ccbe1079.png)
