@@ -58,8 +58,8 @@ There are some hypotesis judged to be most relevant and could drive our Explorat
 
 Some of them might not be tested in advance for lack of information in this DataSet. Thus it can be tested in the next CRISP-DM circle.
 
-Below are the summary of three tested hypoteses.
-1. Stores with larger assortments should sell more -- TRUE
+**Below are the summary of TOP 3 INSIGHT achivied through the tested hypoteses.**
+1. Stores with larger assortments should sell more. **TRUE**
 
 ![image](https://user-images.githubusercontent.com/73034020/180753446-e35fd0a4-9b15-44c5-80f7-3104ccbe1079.png)
 
@@ -67,7 +67,17 @@ Below are the summary of three tested hypoteses.
 
 There is proportionally more sales in biggers assortments than the basic ones.
 
-1. Stores with larger assortments should sell more -- TRUE
+2. Stores should sell more in the second half of the year. **TRUE**
+
+![image](https://user-images.githubusercontent.com/73034020/182120827-f38d1da6-5502-43dc-a779-2b4902fa387d.png)
+
+Stores sells more in the second half of the year, especially in December.
+
+3. Stores with closer competitors should sell less. **FALSE**
+
+![image](https://user-images.githubusercontent.com/73034020/182123410-1580b4db-36c8-458a-9e50-6826defe5a23.png)
+
+Stores sells more when close to competitors.
 
 
 
