@@ -4,10 +4,10 @@
 
 **Disclaimer**: this project was inspired by the "Rossmann Store Sales" challenge published on kaggle (https://www.kaggle.com/c/rossmann-store-sales). Although it is a fictitious project it will follow all steps of a real project.
 
-## Business Issue
+## 1) Business Issue
 The sales director of the Rossmann stores wants to estimate the sales forecast for the next 6 weeks on its different units spread across Europe. So that each store manager can plan the budget with reforms (If the store has a high sales prediction) or with cost reduction (If the store has a low sales prediction)
 
-## Solution methodology
+## 2) Solution methodology
 The resolution of the challenge was carried out following the CRISP-DM (CRoss-Industry Standard Process for data mining) methodology, which is a cyclical approach that streamlines the delivery of value to the business through fast and valuable MVPs.
 
 Benefits of Using CRISP-DM
@@ -22,7 +22,7 @@ For more details about CRISP-DM metodology: https://analyticsindiamag.com/why-is
 ![image](https://user-images.githubusercontent.com/73034020/180753015-7945d745-3420-4fd0-9681-6487fb066c80.png)
 
 
-## Data collection
+## 3) Data collection
 The data was collected in Kaggle and all the columns attributes are explained below:
 
 Most of the fields are self-explanatory. The following are descriptions for those that aren't.
@@ -33,7 +33,7 @@ Most of the fields are self-explanatory. The following are descriptions for thos
 For more detail about data, feel free to access the kaggle page:
 https://www.kaggle.com/competitions/rossmann-store-sales/data.
 
-## Data Understanding through mind map Hypotesis
+## 4) Data Understanding through mind map Hypotesis
 In this section we will list some hypothesis that can be tested using this data, these hypothesis generally comes from brainstorming 
 with business areas and are very important to drive our analyses.
 If they are not enough to explain the stores sales we would search for more data and formulate new hypotheses
@@ -75,9 +75,20 @@ Stores sells more in the second half of the year, especially in December.
 
 3. Stores with closer competitors should sell less. **FALSE**
 
-![image](https://user-images.githubusercontent.com/73034020/182123410-1580b4db-36c8-458a-9e50-6826defe5a23.png)
+![image](https://user-images.githubusercontent.com/73034020/182124593-5d93259b-6c4a-4524-a1ce-c73a148009f3.png)
 
 Stores sells more when close to competitors.
+
+## 5) Machine learning models applied and performances.
+
+Five different models was tested, below it's shown their preliminay performance in the holdout set.
+
+![image](https://user-images.githubusercontent.com/73034020/182127857-6818e4a4-51e3-4b60-bf66-b8878ffd35f7.png)
+
+Although RandomForestRegressor performed better we are going to choose XGBRegressor as the "winner" model, because it is much lighter to operate in production 
+and it doesn't have a big difference in RMSE. 
+It is very important to consider the model performance WHILE in PRODUTION.
+
 
 
 
