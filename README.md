@@ -112,10 +112,10 @@ n_estimators, learning_rate, max_depth, subsample, colsample_bytee, min_child_we
 
 The train and test results of the chosen model considering performance in production is shown below.
 
-Train:
+Train:  
 ![image](https://user-images.githubusercontent.com/73034020/182584516-327c9baa-2633-4f2d-a094-7aa52e743682.png)
 
-Final evaluation on holdout set:
+Final evaluation on holdout set:  
 ![image](https://user-images.githubusercontent.com/73034020/182584550-766751f2-486a-4b66-ab88-610532d6b46c.png)
 
 
@@ -124,14 +124,14 @@ Final evaluation on holdout set:
 After the predictions evaluation, we must translate the model performance to the business.
 One of the most intuitive ways to do so is showing easier interpretable performance metrics like error and percentage error:
 error: sales-predictions
-error rate: predictions/sales
+error rate: predictions/sales  
 
-![image](https://user-images.githubusercontent.com/73034020/182585638-53d3052e-158b-4d9f-9f85-8514e723a9d1.png)
+![image](https://user-images.githubusercontent.com/73034020/182585638-53d3052e-158b-4d9f-9f85-8514e723a9d1.png)  
 
-The top-left graph shows us the predictions are close the real sales values.
-The top-right graph shows us the errors predictions tends underestimate the real sales value.
-The bottom-left graph shows us the error predictions are mainly distribuited around 0, which is a very good indicator.
-The bottom right graph shows us the model performance is consistent through all sales magnitude sizes.
+The top-left graph shows us the predictions are close the real sales values.  
+The top-right graph shows us the errors predictions tends underestimate the real sales value.  
+The bottom-left graph shows us the error predictions are mainly distribuited around 0, which is a very good indicator.  
+The bottom-right graph shows us the model performance is consistent through all sales magnitude sizes.  
 
 
 
