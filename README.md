@@ -21,6 +21,18 @@ For more details about CRISP-DM metodology: https://analyticsindiamag.com/why-is
 
 ![image](https://user-images.githubusercontent.com/73034020/180753015-7945d745-3420-4fd0-9681-6487fb066c80.png)
 
+The strategy used to solv this was divided in 10 steps, each of them can be seen in notebook.
+
+Step 01. Data Description:  
+Step 02. Feature Engineering:  
+Step 03. Data Filtering:  
+Step 04. Exploratory Data Analysis:  
+Step 05. Data Preparation:  
+Step 06. Feature Selection:  
+Step 07. Machine Learning Modelling:  
+Step 08. Hyperparameter Fine Tunning:  
+Step 09. Convert Model Performance to Business Values:  
+Step 10. Deploy Modelo to Production:  
 
 ## 3) Data collection
 The data was collected in Kaggle and all the columns attributes are explained below:
@@ -33,7 +45,7 @@ Most of the fields are self-explanatory. The following are descriptions for thos
 For more detail about data, feel free to access the kaggle page:
 https://www.kaggle.com/competitions/rossmann-store-sales/data.
 
-## 4) Data Understanding through mind map Hypotesis
+## 4) Data Understanding through mind map Hypotesis and **top 3 insights**
 In this section we will list some hypothesis that can be tested using this data, these hypothesis generally comes from brainstorming 
 with business areas and are very important to drive our analyses.
 If they are not enough to explain the stores sales we would search for more data and formulate new hypotheses
@@ -58,7 +70,7 @@ There are some hypotesis judged to be most relevant and could drive our Explorat
 
 Some of them might not be tested in advance for lack of information in this DataSet. Thus it can be tested in the next CRISP-DM circle.
 
-**Below are the summary of TOP 3 INSIGHT achivied through the tested hypoteses.**
+**Below are the summary of TOP 3 INSIGHTS achivied through the tested hypoteses.**
 1. Stores with larger assortments should sell more. **TRUE**
 
 ![image](https://user-images.githubusercontent.com/73034020/180753446-e35fd0a4-9b15-44c5-80f7-3104ccbe1079.png)
@@ -81,13 +93,46 @@ Stores sells more when close to competitors.
 
 ## 5) Machine learning models applied and performances.
 
-Five different models was tested, below it's shown their preliminay performance in the holdout set.
+Four different models was evaluated through time series cross validation, the idea for this method is to divide the training set into two folds at each iteration on condition that the validation set is always ahead of the training set, below it's shown how it works.
 
-![image](https://user-images.githubusercontent.com/73034020/182127857-6818e4a4-51e3-4b60-bf66-b8878ffd35f7.png)
+![cv](https://user-images.githubusercontent.com/73034020/182566611-46001688-3c88-4799-90c6-6fc007c990ec.png)
+
+These four models got the following cross val results:
+
+![image](https://user-images.githubusercontent.com/73034020/182563192-4d98c42f-542e-41bf-8fad-e5439afd5cd6.png)
 
 Although RandomForestRegressor performed better we are going to choose XGBRegressor as the "winner" model, because it is much lighter to operate in production 
 and it doesn't have a big difference in RMSE. 
 It is very important to consider the model performance WHILE in PRODUTION.
+
+**Hyperparameter tuning and final model**
+
+After the candidate model selection, we need to optimize it through hyperparameter tuning. In this project it was tuned:
+n_estimators, learning_rate, max_depth, subsample, colsample_bytee, min_child_weight and gamma.
+
+The train and test results of the chosen model considering performance in production is shown below.
+
+Train:  
+![image](https://user-images.githubusercontent.com/73034020/182584516-327c9baa-2633-4f2d-a094-7aa52e743682.png)
+
+Final evaluation on holdout set:  
+![image](https://user-images.githubusercontent.com/73034020/182584550-766751f2-486a-4b66-ab88-610532d6b46c.png)
+
+
+
+## 6) Business Results.
+After the predictions evaluation, we must translate the model performance to the business.
+One of the most intuitive ways to do so is showing easier interpretable performance metrics like error and percentage error:
+error: sales-predictions
+error rate: predictions/sales  
+
+![image](https://user-images.githubusercontent.com/73034020/182585638-53d3052e-158b-4d9f-9f85-8514e723a9d1.png)  
+
+The top-left graph shows us the predictions are close the real sales values.  
+The top-right graph shows us the errors predictions tends underestimate the real sales value.  
+The bottom-left graph shows us the error predictions are mainly distribuited around 0, which is a very good indicator.  
+The bottom-right graph shows us the model performance is consistent through all sales magnitude sizes.  
+
 
 
 
