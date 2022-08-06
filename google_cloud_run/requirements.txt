@@ -6,7 +6,6 @@ argon2-cffi==21.3.0
 argon2-cffi-bindings==21.2.0
 asn1crypto==1.5.1
 asttokens==2.0.5
-atom-ml==4.13.1
 atomicwrites==1.4.0
 attrs==21.4.0
 Babel==2.9.1
@@ -14,11 +13,9 @@ backcall==0.2.0
 beautifulsoup4==4.11.1
 bleach==4.1.0
 bokeh==2.4.2
-Boruta==0.3
 Brotli==1.0.9
 brotlipy==0.7.0
 build==0.8.0
-catboost==1.0.5
 category-encoders==2.4.0
 certifi==2021.10.8
 cffi==1.15.0
