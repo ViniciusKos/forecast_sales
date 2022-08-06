@@ -4,24 +4,15 @@ import pandas as pd
 import numpy as np
 import math
 import datetime
-from sklearn.preprocessing              import RobustScaler,MinMaxScaler
-from sklearn.base                       import BaseEstimator, TransformerMixin
-from sklearn.preprocessing              import LabelEncoder
-from sklearn.compose                    import TransformedTargetRegressor
-from sklearn.linear_model               import LinearRegression, Lasso
-from sklearn.ensemble                   import RandomForestRegressor
-from sklearn.metrics                    import mean_absolute_error, mean_absolute_percentage_error, mean_squared_error
-import xgboost as xgb
 
-
-class rossmann( object ):
+class Rossmann( object ):
     def __init__( self ):
-        self.home_path='P:\\Python\\GitHub\\forecast_sales\\parameters'
-        self.competition_distance_scaler   = pickle.load( open( self.home_path + '\parameters\competition_distance_scaler.pkl', 'rb') )
-        self.competition_time_month_scaler = pickle.load( open( self.home_path + '\parameters\competition_time_month_scaler.pkl', 'rb') )
-        self.promo_time_week_scaler        = pickle.load( open( self.home_path + '\parameters\promo_time_week_scaler.pkl', 'rb') )
-        self.year_scaler                   = pickle.load( open( self.home_path + '\parameters\year_scaler.pkl', 'rb') )
-        self.store_type_scaler             = pickle.load( open( self.home_path + '\parameters\store_type_scaler.pkl', 'rb') )
+        self.home_path=r'P:\Python\GitHub\forecast_sales'
+        self.competition_distance_scaler   = pickle.load( open( self.home_path + r'\parameters\competition_distance_scaler.pkl', 'rb') )
+        self.competition_time_month_scaler = pickle.load( open( self.home_path + r'\parameters\competition_time_month_scaler.pkl', 'rb') )
+        self.promo_time_week_scaler        = pickle.load( open( self.home_path + r'\parameters\promo_time_week_scaler.pkl', 'rb') )
+        self.year_scaler                   = pickle.load( open( self.home_path + r'\parameters\year_scaler.pkl', 'rb') )
+        self.store_type_scaler             = pickle.load( open( self.home_path + r'\parameters\store_type_scaler.pkl', 'rb') )
         
         
     def data_cleaning( self, df1 ): 
@@ -168,7 +159,7 @@ class rossmann( object ):
         cols_selected = [ 'store', 'promo', 'store_type', 'assortment', 'competition_distance', 'competition_open_since_month',
             'competition_open_since_year', 'promo2', 'promo2_since_week', 'promo2_since_year', 'competition_time_month', 'promo_time_week',
             'day_of_week_sin', 'day_of_week_cos', 'month_sin', 'month_cos', 'day_sin', 'day_cos', 'week_of_year_sin', 'week_of_year_cos']
-        print(len(cols_selected))
+        
         return df5[ cols_selected ]
     
     
@@ -177,6 +168,6 @@ class rossmann( object ):
         pred = model.predict( test_data )
         
         # join pred into the original data
-        original_data['prediction'] = np.expm1( pred )
+        original_data['prediction'] = pred
         
         return original_data.to_json( orient='records', date_format='iso' )
