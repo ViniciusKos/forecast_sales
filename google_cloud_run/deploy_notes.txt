@@ -1,2 +1,2 @@
-gclouds builds submit --tag gcr.io/deploy-rossmann/rossman_predict
-gcloud run deploy --image gcr.io/deploy-rossmann/rossman_predict --platform linux/amd64 --format docker --remove-signatures
+gcloud builds submit --tag gcr.io/deploy-rossmann/rossman_predict/quickstart-image P:\Python\GitHub\forecast_sales\google_cloud_run\Dockerfile
+gcloud run deploy --image gcr.io/deploy-rossmann/rossman_predict --platform managed

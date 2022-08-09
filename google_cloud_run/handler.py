@@ -3,6 +3,7 @@ import pandas as pd
 from flask             import Flask, request, Response
 from rossmann import Rossmann
 import inflection
+import os
 
 # loading model
 model = pickle.load( open(r'P:\\Python\\GitHub\\forecast_sales\\parameters\\model_xgb_rossmann_v0.pkl', 'rb') )
@@ -43,4 +44,4 @@ def rossmann_predict():
         return Response( '{}', status=200, mimetype='application/json' )
 
 if __name__ == '__main__':
-    app.run(debug=True )
+    app.run(port=int(os.environ.get("PORT", 8080)),host='0.0.0.0',debug=True)
