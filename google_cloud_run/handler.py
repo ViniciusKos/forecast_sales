@@ -43,4 +43,4 @@ def rossmann_predict():
         return Response( '{}', status=200, mimetype='application/json' )
 
 if __name__ == '__main__':
-    app.run( '192.168.1.13', debug=True )
+    app.run(debug=True )
