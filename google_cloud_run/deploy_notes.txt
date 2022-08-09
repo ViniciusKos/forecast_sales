@@ -1,2 +1,2 @@
 gclouds builds submit --tag gcr.io/deploy-rossmann/rossman_predict
-gcloud run deploy --image gcr.io/deploy-rossmann/rossman_predict --platform managed
+gcloud run deploy --image gcr.io/deploy-rossmann/rossman_predict --platform managed --format docker --remove-signatures
