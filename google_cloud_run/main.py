@@ -6,7 +6,7 @@ import inflection
 import os
 
 # loading model
-model = pickle.load( open(r'P:\\Python\\GitHub\\forecast_sales\\parameters\\model_xgb_rossmann_v0.pkl', 'rb') )
+model = pickle.load( open(r'P:\\Python\\GitHub\\forecast_sales\\parameters\\model_xgb_rossmann_v0.pkl', 'rb'))
 
 # initialize API
 app = Flask( __name__ )

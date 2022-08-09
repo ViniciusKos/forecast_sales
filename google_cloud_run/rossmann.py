@@ -4,10 +4,11 @@ import pandas as pd
 import numpy as np
 import math
 import datetime
+import os
 
 class Rossmann( object ):
     def __init__( self ):
-        self.home_path=r'P:\Python\GitHub\forecast_sales'
+        self.home_path=os.getcwd()
         self.competition_distance_scaler   = pickle.load( open( self.home_path + r'\parameters\competition_distance_scaler.pkl', 'rb') )
         self.competition_time_month_scaler = pickle.load( open( self.home_path + r'\parameters\competition_time_month_scaler.pkl', 'rb') )
         self.promo_time_week_scaler        = pickle.load( open( self.home_path + r'\parameters\promo_time_week_scaler.pkl', 'rb') )
