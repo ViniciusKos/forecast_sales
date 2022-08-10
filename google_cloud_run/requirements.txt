@@ -8,4 +8,4 @@ scikit_learn==1.0.2
 scipy==1.8.0
 xgboost==1.5.1
 gunicorn>=20.1.0
-gcfs>=2022.7.1
+gcfs==2022.7.1
