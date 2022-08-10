@@ -4,9 +4,16 @@ from flask             import Flask, request, Response
 from rossmann import Rossmann
 import inflection
 import os
+import gcsfs
+
 
 # loading model
-model = pickle.load( open(r'P:\\Python\\GitHub\\forecast_sales\\parameters\\model_xgb_rossmann_v0.pkl', 'rb'))
+fs = gcsfs.GCSFileSystem(project = 'deploy-rossmann')
+mod='gs://deploy-rossmann_cloudbuild/source/parameters/model_xgb_rossmann_v0.pkl'
+with fs.open(mod, 'rb') as file:
+    model=pickle.load(file)
+
+
 
 # initialize API
 app = Flask( __name__ )

@@ -5,17 +5,28 @@ import numpy as np
 import math
 import datetime
 import os
+import gcsfs
+
+
+
+
 
 class Rossmann( object ):
     def __init__( self ):
-        self.home_path=os.getcwd()
-        self.competition_distance_scaler   = pickle.load( open( self.home_path + r'\parameters\competition_distance_scaler.pkl', 'rb') )
-        self.competition_time_month_scaler = pickle.load( open( self.home_path + r'\parameters\competition_time_month_scaler.pkl', 'rb') )
-        self.promo_time_week_scaler        = pickle.load( open( self.home_path + r'\parameters\promo_time_week_scaler.pkl', 'rb') )
-        self.year_scaler                   = pickle.load( open( self.home_path + r'\parameters\year_scaler.pkl', 'rb') )
-        self.store_type_scaler             = pickle.load( open( self.home_path + r'\parameters\store_type_scaler.pkl', 'rb') )
+        transformers={}
+        fs = gcsfs.GCSFileSystem(project = 'deploy-rossmann')
+        for i in ['competition_distance_scaler.pkl','competition_time_month_scaler.pkl','promo_time_week_scaler.pkl','store_type_scaler.pkl','year_scaler.pkl']:
+            mod=f'gs://deploy-rossmann_cloudbuild/source/parameters/{i}'
+            with fs.open(mod, 'rb') as file:
+                transformers[i]=pickle.load(file)
+        self.competition_distance_scaler=transformers["competition_distance_scaler"]
+        self.competition_time_month_scaler=transformers["competition_time_month_scaler"]
+        self.promo_time_week_scaler=transformers["promo_time_week_scaler"]
+        self.store_type_scaler=transformers["store_type_scaler"]
+        self.year_scaler=transformers["year_scaler"]
         
         
+
     def data_cleaning( self, df1 ): 
         
         ## 1.1. Rename Columns
