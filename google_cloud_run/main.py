@@ -19,6 +19,7 @@ with fs.open(mod, 'rb') as file:
 app = Flask( __name__ )
 
 @app.route( '/rossmann/predict', methods=['POST'] )
+#@app.route( '/', methods=['POST'] )
 def rossmann_predict():
     test_json = request.get_json()
    
@@ -51,4 +52,4 @@ def rossmann_predict():
         return Response( '{}', status=200, mimetype='application/json' )
 
 if __name__ == '__main__':
-    app.run(port=int(os.environ.get("PORT", 8080)),host='0.0.0.0',debug=True)
+    app.run(debug=True)

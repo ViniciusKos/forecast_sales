@@ -9,8 +9,6 @@ import gcsfs
 
 
 
-
-
 class Rossmann( object ):
     def __init__( self ):
         transformers={}
@@ -19,11 +17,11 @@ class Rossmann( object ):
             mod=f'gs://deploy-rossmann_cloudbuild/source/parameters/{i}'
             with fs.open(mod, 'rb') as file:
                 transformers[i]=pickle.load(file)
-        self.competition_distance_scaler=transformers["competition_distance_scaler"]
-        self.competition_time_month_scaler=transformers["competition_time_month_scaler"]
-        self.promo_time_week_scaler=transformers["promo_time_week_scaler"]
-        self.store_type_scaler=transformers["store_type_scaler"]
-        self.year_scaler=transformers["year_scaler"]
+        self.competition_distance_scaler=transformers["competition_distance_scaler.pkl"]
+        self.competition_time_month_scaler=transformers["competition_time_month_scaler.pkl"]
+        self.promo_time_week_scaler=transformers["promo_time_week_scaler.pkl"]
+        self.store_type_scaler=transformers["store_type_scaler.pkl"]
+        self.year_scaler=transformers["year_scaler.pkl"]
         
         
 

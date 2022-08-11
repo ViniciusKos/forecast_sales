@@ -1,6 +1,6 @@
 # Use the official lightweight Python image.
 # https://hub.docker.com/_/python
-FROM --platform=linux/amd64 python:3.10-slim
+FROM --platform=linux/amd64 python:3.10.4-slim
 
 # Allow statements and log messages to immediately appear in the Knative logs
 ENV PYTHONUNBUFFERED True
@@ -16,6 +16,7 @@ ENV HOST 0.0.0.0
 
 
 RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install gcsfs==2022.7.1
 
 # Run the web service on container startup. Here we use the gunicorn
 # webserver, with one worker process and 8 threads.
