@@ -1,2 +1,2 @@
-gcloud builds submit --tag gcr.io/deploy-rossmann/rossman_predict/quickstart-image P:\Python\GitHub\forecast_sales\google_cloud_run\Dockerfile
+gcloud builds submit --tag gcr.io/deploy-rossmann/rossman_predict/quickstart-image P:\Python\GitHub\forecast_sales\google_cloud_run
 gcloud run deploy --image gcr.io/deploy-rossmann/rossman_predict --platform managed
