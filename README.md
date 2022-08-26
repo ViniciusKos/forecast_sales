@@ -94,6 +94,10 @@ Stores sell more when close to competitors.
 
 ## 5) Machine learning models applied and performances.
 
+Before starting the machine learning models tests, we should state a baseline, a metric to be beaten. Usually, a baseline is a simple prediction based on the mean of the values, in this case, the mean metrics are in the table below.
+
+![image](https://user-images.githubusercontent.com/73034020/186864386-7c6a6c45-fb10-4255-8088-128ee901a06d.png)
+
 Four different models were evaluated through time series cross-validation, the idea for this method is to divide the training set into two folds at each iteration on the condition that the validation set is always ahead of the training set, below it's shown how it works.
 
 ![cv](https://user-images.githubusercontent.com/73034020/182566611-46001688-3c88-4799-90c6-6fc007c990ec.png)
@@ -118,6 +122,10 @@ Train:
 
 Final evaluation on holdout set:  
 ![image](https://user-images.githubusercontent.com/73034020/182584550-766751f2-486a-4b66-ab88-610532d6b46c.png)
+
+Comparing our tuned model with the baseline:
+(1817.7/1331.4)-1 = 36,5%
+Our final model has an error of 36,5% less than simply calculating the sales average.
 
 
 
