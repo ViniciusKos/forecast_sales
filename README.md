@@ -107,7 +107,7 @@ These four models got the following cross-val results:
 ![image](https://user-images.githubusercontent.com/73034020/182563192-4d98c42f-542e-41bf-8fad-e5439afd5cd6.png)
 
 Although RandomForestRegressor performed better we are going to choose XGBRegressor as the "winner" model, because it is much lighter to operate in production 
-and it doesn't have a big difference in RMSE. 
+and it doesn't have a big difference in RMSE (Root Mean Squared Error). 
 It is very important to consider the model performance WHILE in PRODUCTION.
 
 **Hyperparameter tuning and final model**
@@ -125,7 +125,7 @@ Final evaluation on holdout set:
 
 Comparing our tuned model with the baseline:
 (1817.7/1331.4)-1 = 36,5%
-Our final model has an error of 36,5% less than simply calculating the sales average.
+Our final model has an RMSE of 36,5% less than simply calculating the sales average.
 
 
 
