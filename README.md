@@ -138,6 +138,7 @@ Overall, the model performed well (better than a simple average prediction), how
 
 Further details on business performance are available in the notebook.
 
-
+## 7) Deploy to the Google Cloud.
+In Progress...
 
 
