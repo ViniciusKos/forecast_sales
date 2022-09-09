@@ -147,6 +147,16 @@ Overall, the model performed well (better than a simple average prediction), how
 Further details on business performance are available in the notebook.
 
 ## 7) Deploy to the Google Cloud.
-In Progress...
+Both the model and telegram Bot was deployed on Google Cloud Platform.
+To get the prediction, type the store number in the telegram bot and deliver the forecast for the next 6 weeks.
+
+An example of the bot working is shown below:
+![Animation3](https://user-images.githubusercontent.com/73034020/189437514-b52a4492-bad2-4f2f-830a-1bf76260bea7.gif)
+
+8) Next Steps:
+
+Re-evaluate the set of parameters' models including more parameters in or making a different optimation strategy, i.e the Bayesian Search.
+Include the pessimistic and positivistic scenarios in predictions.
+
 
 
