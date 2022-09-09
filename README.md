@@ -153,8 +153,7 @@ To get the prediction, type the store number in the telegram bot and deliver the
 An example of the bot working is shown below:
 ![Animation3](https://user-images.githubusercontent.com/73034020/189437514-b52a4492-bad2-4f2f-830a-1bf76260bea7.gif)
 
-8) Next Steps:
-
+## 8) Next Steps:
 Re-evaluate the set of parameters' models including more parameters in or making a different optimation strategy, i.e the Bayesian Search.
 Include the pessimistic and positivistic scenarios in predictions.
 
