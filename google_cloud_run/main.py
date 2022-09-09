@@ -1,27 +1,26 @@
 import pickle
 import pandas as pd
-from flask             import Flask, request, Response
+from flask             import Flask, request, Response, jsonify, render_template, url_for
 from rossmann import Rossmann
 import inflection
 import os
-import gcsfs
 
 
-# loading model
-fs = gcsfs.GCSFileSystem(project = 'deploy-rossmann')
-mod='gs://deploy-rossmann_cloudbuild/source/parameters/model_xgb_rossmann_v0.pkl'
-with fs.open(mod, 'rb') as file:
-    model=pickle.load(file)
+
 
 
 
 # initialize API
 app = Flask( __name__ )
 
-@app.route( '/rossmann/predict', methods=['POST'] )
-#@app.route( '/', methods=['POST'] )
+# loading model
+model=pickle.load(open("parameters/model_xgb_rossmann_v0.pkl","rb"))
+
+
+@app.route( '/rossmann/rossmann_predict', methods=['POST'] )
 def rossmann_predict():
-    test_json = request.get_json()
+
+    test_json = request.get_json(force=True)
    
     if test_json: # there is data
         if isinstance( test_json, dict ): # unique example
